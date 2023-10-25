@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+bool is possible(vector<int>arr, int m, int n, int mid)
+{
+int student count = 1;
+int page sum = 0;
+for(int i=0; i<n; i++)
+{
+if(page sum + arr[i]<=mid)
+{
+page sum+ =arr[i];
+}
+else
+{
+student count ++;
+if(student count >m || arr[i] >mid)
+{
+return false;
+}
+page sum = arr[i];
+}
+}
+return true;
+int allocate book (vector<int>arr, int n, int m)
+{
+int s =0;
+int sum = 0;
+for(int i=0; i<n; i++)
+{
+sum += arr[i];
+}
+int e = sum;
+int ans = -1;
+int mid = s+(e-s)/2
+while(s<=e)
+{
+if(is possible (arr,n,m,mid)
+{
+ans = mid;
+e = mid-1;
+}
+else
+{
+s = mid+1;
+}
+mid = s+(e-s)/2;
+}
+return = ans;
